@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+
+ /* reset css */
+
+
  html, body, div, span, applet, object, iframe,
  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
  a, abbr, acronym, address, big, cite, code,
@@ -54,4 +59,60 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+*{
+  font-family: sans-serif;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+}
+.link:hover {
+  background: none;
+  color: orange;
+}
+
+
+
+/* navigation bar with header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: #fae0ca;
+  border-bottom: 1px solid #efefef;
+  box-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+
+/* header div 안의 item */
+
+.header .logo {
+  margin: 8px;
+  float: left;
+  width: 150px;
+  height: 34px;
+  background: orange;
+}
+
+.header .header-item-container {
+  float: right;
+  margin: 17px;
+  font-size: 16px;
+}
+
+.header .navigation {
+  float: left;
+}
+
+.header .navigation .nav-link {
+  padding: 5px;
+}
+
+body {
+  margin: 70px 20px;
 }

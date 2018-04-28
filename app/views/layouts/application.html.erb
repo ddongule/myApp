@@ -8,7 +8,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header class="header">
+
+    <div class="logo"> </div>
+
+    <div class="header-item-container">
+      <nav class="navigation">
+        <a class="link nav-link" href="/"> 홈 </a>
+        <a class="link nav-link" href="/posts/new"> 팀 </a>
+        <a class="link nav-link" href="/"> 디렉토리3 </a>
+        <a class="link nav-link" href="/"> 디렉토리4 </a>
+      </nav>
+
+    </div>
+
+
+  </header>
+
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+
+
+  </footer>
+
 </html>
