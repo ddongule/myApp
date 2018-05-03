@@ -61,19 +61,35 @@ table {
 	border-spacing: 0;
 }
 
-*{
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.2em;
+
+}
+/* 여기까지 reset css  */
+
+
+/* 민경 css */
+
+* {
   font-family: sans-serif;
+}
+
+body {
+  margin: 70px 20px;
+  padding: 20px;
 }
 
 .link {
   color: #000;
   text-decoration: none;
-}
-.link:hover {
-  background: none;
-  color: orange;
-}
 
+  &:hover {
+    background: none;
+    color: rgb(32, 81, 207);
+  }
+}
 
 
 /* navigation bar with header */
@@ -83,20 +99,29 @@ table {
   left: 0;
   right: 0;
   height: 50px;
-  background: #fae0ca;
-  border-bottom: 1px solid #efefef;
+  background: #ced8fe;
+  border-bottom: 1px solid rgb(32, 81, 207);
   box-shadow: 0 0 8px rgba(0,0,0,0.6);
 }
-
 
 /* header div 안의 item */
 
 .header .logo {
   margin: 8px;
   float: left;
-  width: 150px;
-  height: 34px;
-  background: orange;
+  width: 110px;
+  height: 35px;
+}
+
+.header .logo .logo-link {
+  margin: 0;
+  float: left;
+  width: 110px;
+  height: 35px;
+}
+
+.header .logo .logo-link:hover {
+  background: none;
 }
 
 .header .header-item-container {
@@ -113,6 +138,24 @@ table {
   padding: 5px;
 }
 
-body {
-  margin: 70px 20px;
+
+
+
+@media (min-width: 768px) {
+  .font-item {
+    float: left;
+    width: 48%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .font-item {
+    width: 31.333333%;
+  }
+}
+
+@media (min-width: 1366px) {
+  .font-item {
+    width: 23%;
+  }
 }

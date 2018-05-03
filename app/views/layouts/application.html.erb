@@ -2,15 +2,23 @@
 <html>
   <head>
     <title>MyApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" >
+    <%= javascript_include_tag 'application' %>
+    <%= yield(:head) %>
     <%= csrf_meta_tags %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
 
   <header class="header">
 
-    <div class="logo"> </div>
+    <div class="logo">
+      <%= link_to (image_tag("NewCaulogo.png", size:"110x35", :alt => "rss feed")), "/", :class => "logo-link" %>
+    </div>
 
     <div class="header-item-container">
       <nav class="navigation">
