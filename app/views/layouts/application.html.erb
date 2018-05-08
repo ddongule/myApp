@@ -22,11 +22,21 @@
 
     <div class="header-item-container">
       <nav class="navigation">
-        <a class="link nav-link" href="/"> 홈 </a>
-        <a class="link nav-link" href="/posts/new"> 팀 </a>
-        <a class="link nav-link" href="/"> 디렉토리3 </a>
-        <a class="link nav-link" href="/"> 디렉토리4 </a>
+        <%= link_to 'Home', root_path, :class => "link nav-link" %>
+        <%= link_to 'Contact', root_path, :class => "link nav-link" %>
+        <%= link_to 'Team', team_index_path, :class => "link nav-link" %>
+        <% if user_signed_in? %>
+          <%= current_user.name %> 님
+          <%= link_to '로그아웃', destroy_user_session_path, method: :delete, :class => "link nav-link" %>
+        <% else %>
+          <%= link_to '회원가입', new_user_registration_path, :class => "link nav-link" %>
+          <%= link_to '로그인', new_user_session_path, :class => "link nav-link" %>
+        <% end %>
+
+          </li>
+
       </nav>
+
 
     </div>
 
@@ -34,6 +44,8 @@
   </header>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 

@@ -23,14 +23,45 @@
 }
 
 .what-we-do .our-item .our-item-title {
-  font-weight:  bold;
+  font-weight: bold;
+  font-size: 1.3em;
   padding-bottom: 10px;
 }
 
+.what-we-do .our-item .our-item-content {
+  padding-bottom: 30px;
+}
+
+.tutor {
+  position: relative;
+}
+
+.tutor .tutor-6th {
+  padding: 10px 0;
+  margin: 0 2%;
+}
+
+.tutor .tutor-6th .tutor-6th-leader {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.tutor-6th-content {
+  font-size: 1.3em;
+}
+
+
+
 
 @media (min-width: 768px) {
+  .what-we-do {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .our-item {
-    float: left;
+    float: none;
     width: 46%;
   }
 }
