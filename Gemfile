@@ -6,6 +6,11 @@ git_source(:github) do |repo_name|
 end
 
 gem 'devise'
+gem 'rolify'
+gem 'authority'
+gem 'bootstrap-sass'
+gem 'simple_form'
+
 gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'

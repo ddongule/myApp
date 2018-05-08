@@ -28,9 +28,12 @@
         <% if user_signed_in? %>
           <%= current_user.name %> 님
           <%= link_to '로그아웃', destroy_user_session_path, method: :delete, :class => "link nav-link" %>
+          <%= link_to "Roles : " + user_roles(current_user), '#' %>
+
         <% else %>
           <%= link_to '회원가입', new_user_registration_path, :class => "link nav-link" %>
           <%= link_to '로그인', new_user_session_path, :class => "link nav-link" %>
+
         <% end %>
 
           </li>
@@ -44,8 +47,11 @@
   </header>
 
   <body>
+    <!-- 예쁘게 보이는 flash message  -->
+    <%= render partial: "devise/shared/flash_messages", flash: flash %>
+<!--
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="alert"><%= alert %></p> -->
     <%= yield %>
   </body>
 

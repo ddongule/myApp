@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @post.name %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class='post'>
+  <div class="title">
+    <h3>Title:
+    <%= @post.title %></h3>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+  <div class="content">
+    <%= simple_format @post.content %>
+  </div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <div class="user">
+    <strong>Created by </strong>
+    <%= @post.user.present? ? @post.user.name : "an anonymous user" %>,
+    <%= time_ago_in_words(@post.created_at) %> ago
+  </div>
+</div>
+
+<hr>
+<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-default' %>
+<%= link_to 'Back', posts_path, class: 'btn btn-default' %>
