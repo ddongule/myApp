@@ -10,6 +10,8 @@ gem 'rolify'
 gem 'authority'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'letter_opener', :group => :development
+gem 'rails_db'
 
 gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

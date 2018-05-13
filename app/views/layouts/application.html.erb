@@ -22,28 +22,28 @@
 
     <div class="header-item-container">
       <nav class="navigation">
-        <%= link_to 'Home', root_path, :class => "link nav-link" %>
-        <%= link_to 'Contact', root_path, :class => "link nav-link" %>
-        <%= link_to 'Team', team_index_path, :class => "link nav-link" %>
-        <% if user_signed_in? %>
-            <%= current_user.name %> 님
-            <%= link_to '로그아웃', destroy_user_session_path, method: :delete, :class => "link nav-link" %>
-            <%= link_to "Roles : " + user_roles(current_user), '#', :class => "link nav-link"%>
-          </div>
-        <% else %>
-          <%= link_to '회원가입', new_user_registration_path, :class => "link nav-link" %>
-          <%= link_to '로그인', new_user_session_path, :class => "link nav-link" %>
+        <%= image_tag ('menu.png'), :id => "menu-icon" %>
+        <ul>
+          <li><%= link_to 'Home', root_path, :class => "link nav-link" %></li>
+          <li><%= link_to 'Contact', root_path, :class => "link nav-link" %></li>
+          <li><%= link_to 'Team', team_index_path, :class => "link nav-link" %></li>
 
-        <% end %>
+          <% if user_signed_in? %>
+              <li><%= current_user.name %> 님</li>
+
+
+              <li><%= link_to '로그아웃', destroy_user_session_path, method: :delete, :class => "link nav-link" %></li>
+              <li><%= link_to "Roles : " + user_roles(current_user), '#', :class => "link nav-link"%></li>
+          <% else %>
+            <li><%= link_to '회원가입', new_user_registration_path, :class => "link nav-link" %></li>
+            <li><%= link_to '로그인', new_user_session_path, :class => "link nav-link" %></li>
+          <% end %>
 
           </li>
 
+        </ul>
       </nav>
-
-
     </div>
-
-
   </header>
 
   <body>

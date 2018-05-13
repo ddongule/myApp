@@ -141,6 +141,25 @@ body {
 }
 
 
+#menu-icon {
+	display: none;
+	width: 25px;
+	height: 25px;
+  padding: 0 0 5px 0;
+}
+
+li {
+	display: inline-block;
+	float: left;
+	padding: 5px;
+}
+
+// devise css
+.sign-up-layout {
+  padding: 50px 100px;
+  text-align: left;
+
+}
 
 
 @media (min-width: 768px) {
@@ -160,4 +179,35 @@ body {
   .font-item {
     width: 23%;
   }
+}
+
+@media only screen and (max-width : 640px) {
+
+  nav ul, nav:active ul {
+    display: none;
+    position: absolute;
+    padding: 20px;
+    background: #fff;
+    border: 2px solid steelblue;
+    right: 10px;
+    top: 42px;
+    width: 140px;
+    border-radius: 10px 0 10px 10px;
+  }
+
+	nav li {
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+	}
+
+  nav:hover ul {
+    display: block;
+  }
+
+  #menu-icon {
+    display:inline-block;
+  }
+
 }

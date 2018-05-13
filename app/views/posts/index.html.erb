@@ -1,4 +1,5 @@
 
+CAULION TEAM <%= @teamid %> 의 스터디 방입니다.
 
 <h2>Listing posts</h2>
 
@@ -17,17 +18,17 @@
         <td class="col-md-6 col-xs-6"><%= post.title %></td>
         <td><%= post.user.present? ? post.user.name : "n/a" %>, <%= time_ago_in_words(post.created_at) %> ago</td>
         <td>
-          <%= link_to icon('eye-open'), post %>&nbsp;
+          <%= link_to icon('eye-open'), show_post_path(teamid: @teamid, id: post) %>&nbsp;
           <% if user_signed_in? %>
-            <%= link_to icon('edit'), edit_post_path(post) if post.updatable_by? current_user %>&nbsp;
-            <%= link_to icon('trash'), post, method: :delete, data: { confirm: 'Are you sure?' } if post.deletable_by? current_user %>
+            <%= link_to icon('edit'), tedit_post_path(teamid: @teamid, id: post) if post.updatable_by? current_user %>&nbsp;
+            <%= link_to icon('trash'), tpost_destroy_path(teamid: @teamid, id: post), method: :delete, data: { confirm: 'Are you sure?' } if post.deletable_by? current_user %>
           <% end %>
         </td>
       </tr>
     <% end %>
-  </tbody>
+    </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
+<%= link_to 'New Post', tnew_post_path(teamid: @teamid), class: "btn btn-default" %>

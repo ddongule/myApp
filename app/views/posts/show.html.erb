@@ -19,5 +19,5 @@
 </div>
 
 <hr>
-<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-default' %>
-<%= link_to 'Back', posts_path, class: 'btn btn-default' %>
+<%= link_to 'Edit', tedit_post_path(teamid: @teamid, id: @post), class: 'btn btn-default' %>
+<%= link_to 'Back', show_path(teamid: @teamid), class: 'btn btn-default' %>

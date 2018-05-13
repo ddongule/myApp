@@ -10,5 +10,5 @@
 <%= render 'form' %>
 
 <hr>
-<%= link_to 'Show', @post, class: 'btn btn-default' %>
-<%= link_to 'Back', posts_path, class: 'btn btn-default' %>
+<%= link_to 'Show', show_post_path(teamid: @teamid), class: 'btn btn-default' %>
+<%= link_to 'Back', show_path(teamid: @teamid), class: 'btn btn-default' %>

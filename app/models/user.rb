@@ -7,6 +7,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
+  # belongs_to :team
+  # 전에 코드에서 가져옴
 
   # has_secure_password
   # encrypted_password
