@@ -9,6 +9,8 @@
 
   <div class="content">
     <%= simple_format @post.content %>
+    <%= link_to "Download file", @post.image_url, download: "Post_#{@post.id}_image" %>
+
   </div>
 
   <div class="user">
@@ -18,6 +20,31 @@
   </div>
 </div>
 
-<hr>
-<%= link_to 'Edit', tedit_post_path(teamid: @teamid, id: @post), class: 'btn btn-default' %>
-<%= link_to 'Back', show_path(teamid: @teamid), class: 'btn btn-default' %>
+
+<div class="left-button">
+  <%= link_to 'Edit', tedit_post_path(teamid: @teamid, id: @post), class: 'btn btn-default' %>
+  <%= link_to 'Back', show_path(teamid: @teamid), class: 'btn btn-default' %>
+  <br />
+</div>
+<hr />
+
+
+<!--
+<form action = '/show/:teamid/posts/:id/comments/create' method= 'post'>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type='text' name='input_comment'>
+  <input type='submit' value='댓글 작성'>
+</form> -->
+
+<br /><br />
+
+<%= form_tag(comments_hi_path, method: "post") do %>
+  <%= label_tag(:댓글) %>
+  <%= text_field_tag(:input_comment) %>
+  <%= submit_tag('입력') %>
+<% end %>
+
+<% @comments.each do |comment| %>
+    <p><%= comment.body %></p>
+    <%= link_to '댓글삭제', comments_bye_path(teamid: @teamid, id: comment.id), class: 'btn btn-default' %>
+<% end %>

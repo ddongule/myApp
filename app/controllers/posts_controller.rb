@@ -9,12 +9,16 @@ class PostsController < ApplicationController
   def index
     @posts = Post.where("team_id = ?", params[:team_id])
     @posts = Post.order(created_at: :desc)
+    @teamposts = Post.where(team_id: params[:teamid])
+
     # @posts = @posts.order('created_at DESC').paginate(:page => params[:page])
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comments = @post.comments
+
   end
 
   # GET /posts/new
@@ -36,6 +40,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+    @post.team_id = current_user.team_id
     respond_to do |format|
       if @post.save
         format.html { redirect_to show_post_path(@current_user.team_id,id: @post.id), notice: 'Post was successfully created.' }
@@ -87,7 +92,7 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       # params.require(:post).permit(:name, :title, :content)
-      params.fetch(:post).permit(:content,:title,:attachment,:user_id)
+      params.fetch(:post).permit(:content,:title,:image,:user_id)
     end
 
 end

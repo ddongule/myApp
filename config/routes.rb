@@ -9,11 +9,13 @@ Rails.application.routes.draw do
   get 'team/sec_cau'
 
   get 'welcome/index'
-
-  resources :posts 
+#
+  resources :posts
   # resources :posts do
-  #   resources :comments
+  #   resources :comments, param: :id
   # end
+
+
 
   # 팀관련 route
   get 'show/:teamid/posts' => 'posts#index', as: 'show'
@@ -43,7 +45,18 @@ Rails.application.routes.draw do
   ## devise_for :users,
   ##  path: 'apple' 이라고 하면 컨트롤러 이름이 user이 아니고, apple이 된다.
   ##
+  ##
+  ##
 
+  #comment 관련 라우트
+  #
+  post '/show/:teamid/posts/:id/comments/create' => 'comments#create', as: 'comments_hi'
+  # get '/show/:teamid/posts/:id/comments/edit' => ' comments#edit', as: 'comments_edit'
+  # get '/show/:teamid/posts/:id/comments/new' => 'comments#new', as: 'comments_hi'
+  # get '/show/:teamid/posts/:id/comments/show' => 'comments#show', as: 'comments_show'
+  # PATCH '/show/:teamid/posts/:id/comments/update' => 'comments#update'
+  # PUT '/show/:teamid/posts/:id/comments/update' => 'comments#update'
+  get '/show/:teamid/posts/:id/comments/destroy' => 'comments#destroy', as: 'comments_bye'
   ## devise_for :users,
   ##  path: 'users'
   ##  path_names: {sign_in: 'login', sign_out: 'logout'} #액션 이름이 바뀐다.
