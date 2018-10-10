@@ -1,0 +1,213 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import 'posts';
+ /* reset css */
+
+
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed,
+ figure, figcaption, footer, header, hgroup,
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+ 	margin: 0;
+ 	padding: 0;
+ 	border: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	vertical-align: baseline;
+ }
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.2em;
+
+}
+/* 여기까지 reset css  */
+
+
+/* 민경 css */
+
+* {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 70px 20px;
+  padding: 20px;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    background: none;
+    color: rgb(32, 81, 207);
+  }
+}
+
+
+/* navigation bar with header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: #ffffff;
+  border-bottom: 1px solid rgb(32, 81, 207);
+  box-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+/* header div 안의 item */
+
+.header .logo {
+  margin: 8px;
+  float: left;
+  width: 110px;
+  height: 35px;
+}
+
+.header .logo .logo-link {
+  margin: 0;
+  float: left;
+  width: 110px;
+  height: 35px;
+}
+
+.header .logo .logo-link:hover {
+  background: none;
+}
+
+.header .header-item-container {
+  float: right;
+  margin: 17px;
+  font-size: 16px;
+}
+
+.header .navigation {
+  float: left;
+}
+
+.header .navigation .nav-link {
+  padding: 5px;
+}
+
+
+#menu-icon {
+	display: none;
+	width: 25px;
+	height: 25px;
+  padding: 0 0 5px 0;
+}
+
+li {
+	display: inline-block;
+	float: left;
+	padding: 5px;
+}
+
+// devise css
+.sign-up-layout {
+  padding: 50px 100px;
+  text-align: left;
+
+}
+
+
+@media (min-width: 768px) {
+  .font-item {
+    float: left;
+    width: 48%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .font-item {
+    width: 31.333333%;
+  }
+}
+
+@media (min-width: 1366px) {
+  .font-item {
+    width: 23%;
+  }
+}
+
+@media only screen and (max-width : 640px) {
+
+  nav ul, nav:active ul {
+    display: none;
+    position: absolute;
+    padding: 20px;
+    background: #fff;
+    border: 2px solid steelblue;
+    right: 10px;
+    top: 42px;
+    width: 140px;
+    border-radius: 10px 0 10px 10px;
+  }
+
+	nav li {
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+	}
+
+  nav:hover ul {
+    display: block;
+  }
+
+  #menu-icon {
+    display:inline-block;
+  }
+
+}

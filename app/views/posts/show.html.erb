@@ -1,19 +1,50 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @post.name %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class='post'>
+  <div class="title">
+    <h3>Title:
+    <%= @post.title %></h3>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+  <div class="content">
+    <%= simple_format @post.content %>
+    <%= link_to "Download file", @post.image_url, download: "Post_#{@post.id}_image" %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  </div>
+
+  <div class="user">
+    <strong>Created by </strong>
+    <%= @post.user.present? ? @post.user.name : "an anonymous user" %>,
+    <%= time_ago_in_words(@post.created_at) %> ago
+  </div>
+</div>
+
+
+<div class="left-button">
+  <%= link_to 'Edit', tedit_post_path(teamid: @teamid, id: @post), class: 'btn btn-default' %>
+  <%= link_to 'Back', show_path(teamid: @teamid), class: 'btn btn-default' %>
+  <br />
+</div>
+<hr />
+
+
+<!--
+<form action = '/show/:teamid/posts/:id/comments/create' method= 'post'>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type='text' name='input_comment'>
+  <input type='submit' value='댓글 작성'>
+</form> -->
+
+<br /><br />
+
+<%= form_tag(comments_hi_path, method: "post") do %>
+  <%= label_tag(:댓글) %>
+  <%= text_field_tag(:input_comment) %>
+  <%= submit_tag('입력') %>
+<% end %>
+
+<% @comments.each do |comment| %>
+    <p><%= comment.body %></p>
+    <%= link_to '댓글삭제', comments_bye_path(teamid: @teamid, id: comment.id), class: 'btn btn-default' %>
+<% end %>
