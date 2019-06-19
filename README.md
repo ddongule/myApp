@@ -1,28 +1,5 @@
-<<<<<<< HEAD
-# myApp
-=======
-# README
+# caulion 6기 팀 활동을 위한 웹 구현
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
->>>>>>> develop
+- 로그인
+- 로그인을 통한 팀 별 게시판 접근
+- 각 팀 별 게시판에 팀원들의 글 공유
