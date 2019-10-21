@@ -75,7 +75,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
-    crass (1.0.4)
+    crass (1.0.5)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -123,9 +123,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_mime (1.0.0)
     mini_portile2 (2.4.0)
-  dependabot/bundler/nokogiri-1.10.4
     minitest (5.12.2)
-   master
     multi_json (1.13.1)
     nio4r (2.3.0)
     nokogiri (1.10.4)
@@ -198,9 +196,9 @@ GEM
     selenium-webdriver (3.11.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
-    simple_form (4.0.0)
-      actionpack (> 4)
-      activemodel (> 4)
+    simple_form (5.0.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
